@@ -1,0 +1,8 @@
+7. SELECT user.user_id, user.username, twit.content users_feed, twit.create_time FROM twit 
+JOIN user ON user.user_id = twit.user_id
+WHERE user.user_id = 1
+	UNION
+SELECT user.user_id, user.username, twit.content users_feed, twit.create_time FROM twit
+JOIN user ON user.user_id = twit.user_id
+WHERE user.user_id IN (SELECT user_id FROM follower WHERE follower_id = 1)
+ORDER BY create_time DESC;

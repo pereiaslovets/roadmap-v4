@@ -1,0 +1,2 @@
+SELECT user_id, username user_without_twits
+FROM user WHERE user_id NOT IN (SELECT user_id FROM twit);

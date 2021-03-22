@@ -1,0 +1,4 @@
+SELECT twit.twit_id, user.username, twit.content, twit.create_time FROM twit
+JOIN user   ON user.user_id = twit.user_id
+ORDER BY twit.create_time DESC LIMIT 5;
+

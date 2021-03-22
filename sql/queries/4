@@ -1,0 +1,3 @@
+SELECT user.user_id, user.username users_with_followers,  COUNT(follower.follower_id) followers_number
+FROM user JOIN follower ON follower.user_id = user.user_id
+GROUP BY follower.user_id HAVING followers_number >=1 ORDER BY followers_number;

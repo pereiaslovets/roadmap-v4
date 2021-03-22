@@ -1,0 +1,3 @@
+SELECT twit.twit_id, twit.content twit, COUNT(comment.comment_id) comments_number
+FROM twit INNER JOIN comment ON comment.twit_id = twit.twit_id
+GROUP BY comment.twit_id ORDER BY comments_number DESC;
